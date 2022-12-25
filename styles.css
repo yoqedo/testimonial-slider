@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--ffamily);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+:root {
+    --bodyfontsize: 32px;
+    --grayishblue: hsl(240, 18%, 77%);
+    --darkblue: hsl(240, 38%, 20%);
+    --ffamily: 'Inter', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.testimonial {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+}
+
+/* Description / Left Section */
+.left .statement::before {
+    content: '';
+    background-image: url('./images/pattern-quotes.svg');
+    background-repeat: no-repeat;
+    display: inline-block;
+    background-size: 80px 80px;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 10px;
+    left: 80px;
+    z-index: -100000;
+}
+
+.name {
+    color: var(--darkblue);
+    padding: 10px 0;
+}
+
+.role {
+    display: flex;
+    color: var(--grayishblue);
+    font-size: 20px;
+}
+
+.statement {
+    font-size: var(--bodyfontsize);
+    color: var(--darkhblue);
+    font-weight: 300;
+}
+
+
+.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+/*****************************/
+
+/* Image / Right Section */
+.img-wrapper::before {
+    content: '';
+    background-image: url('/images/pattern-bg.svg');
+    background-repeat: no-repeat;
+    background-size: 600px 600px;
+    width: 600px;
+    height: 600px;
+    position: absolute;
+    z-index: -100000;
+    left: -100px;
+    top: -110px;
+}
+
+.img-wrapper {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    box-shadow: 3px 3px 20px #888888;
+    position: relative;
+}
+
+.btn-container {
+    position: absolute;
+    left: 30px;
+    bottom: -30px;
+    background-color: white;
+    width: 110px;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 50px;
+    box-shadow: 3px 3px 20px #888888;
+}
+
+.btn-container img {
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+}
+
+img {
+    width: 400px;
+}
+
+/*********************************/
+
+/* Footer Section*/
+.attribution {
+    width: 100%;
+    text-align: center;
+    color: var(--grayishblue);
+    padding-top: 100px;
+}
+
+/* Media Query for Mobile */
+@media screen and (max-width: 420px) {
+    .testimonial {
+        flex-direction: column-reverse;
+    }
+
+    img {
+        width: 300px;
+    }
+
+    .img-wrapper {
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
+    }
+
+    .left {
+        margin-top: 50px;
+        align-items: center;
+    }
+
+    .statement {
+        text-align: center;
+        font-size: 22px;
+        padding: 10px 20px;
+    }
+
+    .btn-container {
+        left: 50%;
+        translate: -50px 0;
+    }
+
+    .img-wrapper::before {
+        background-image: url('/images/pattern-bg.svg');
+        background-repeat: no-repeat;
+        background-size: 380px 380px;
+        display: inline-block;
+        width: 380px;
+        height: 380px;
+        content: "";
+        position: absolute;
+        top: -50px;
+        left: -40px;
+    }
+
+    .left .statement::before {
+        content: '';
+        background-image: url('./images/pattern-quotes.svg');
+        background-repeat: no-repeat;
+        display: inline-block;
+        background-size: 45px 45px;
+        width: 45px;
+        height: 454px;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        z-index: 100000;
+        translate: -22.5px 0px;
+    }
+
+    .attribution {
+        font-size: 14px;
+        padding-top: 15px;
+    }
+}
